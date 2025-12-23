@@ -15,6 +15,7 @@ INCLUDES=-DPACKAGE_CONFIG_DIR=\""$(confdir)/"\"\
 	 -I$(top_srcdir)/controls/entry\
 	 -I$(top_srcdir)/controls/label\
 	 -I$(top_srcdir)/controls/textview\
+	 -I/usr/include/libxml2\
 	 @PACKAGE_CFLAGS@  @GLADE_PACKAGE_CFLAGS@
 
 libuictlcapt_la_LDFLAGS = \
@@ -28,7 +29,7 @@ libuictlcapt_la_SOURCES=configurefile.c configurefile.h\
 			   cngplpmodIF.h cngplpmodIF.c
 
 AM_CFLAGS=-O2 -Wall -fPIC
-libuictlcapt_la_LIBADD =  -lglade-2.0 -lcups\
+libuictlcapt_la_LIBADD = -lxml2 -lglade-2.0 -lcups\
 			$(top_srcdir)/cngplpmod/libcngplpmod.la\
 			$(top_srcdir)/controls/button/libcaptbutton.la\
 			$(top_srcdir)/controls/combo/libcaptcombo.la\

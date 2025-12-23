@@ -29,6 +29,7 @@
 
 #ifndef _OPAL
 #include <cups/cups.h>
+#include <cups/ppd.h>
 #else
 #include <unistd.h>
 #endif

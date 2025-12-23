@@ -17,8 +17,7 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-
-#include <gmodule.h>
+#include <gtk/gtk.h>
 #include <stdio.h>
 #include <string.h>
 #include "load.h"
@@ -28,6 +27,17 @@
 GModule* g_module = NULL;
 char pre_lib_name[MAX_PATH];
 gboolean first_load = TRUE;
+
+void (*ShowPDLDialog)(const char* name, int print) = NULL;
+gboolean (*InitPDLController)(GtkWidget* main_dlg, char *printer_name, const char* print_file, gboolean first_load) = NULL;
+void (*UpdatePDLData)(int id, const char* value) = NULL;
+void (*UpdatePDLDataInt)(int id, int value) = NULL;
+void (*ClosePDLController)(void) = NULL;
+void (*SavePDLPrinterData)(void) = NULL;
+void (*PrintPDLFile)(void) = NULL;
+char* (*GetPDLData)(int id) = NULL;
+int (*GetPDLDataInt)(int id, int def) = NULL;
+int (*ExecPDLJobMode)(void) = NULL;
 
 int LoadPDL(GladeXML* main_xml, const char* print_file)
 {

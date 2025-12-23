@@ -1,0 +1,42 @@
+# files
+stamp-h1
+config.*
+POTFILES
+compile
+configure
+depcomp
+libtool
+ltmain.sh
+missing
+install-sh*
+COPYING
+INSTALL
+**/Makefile
+!/Makefile
+
+# file extensions
+*~
+*.a
+*.cache
+*.gmo
+*.o
+*.lo
+*.la
+*.log
+*.m4
+*.in
+*.so*
+
+# output executables
+ccp
+cngplp
+cnusb
+cnjatool
+pstocapt
+pstocapt2
+pstocapt3
+
+# folders
+.libs/
+.deps/
+*.cache/

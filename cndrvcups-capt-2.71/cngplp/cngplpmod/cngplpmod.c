@@ -728,7 +728,6 @@ void SetCupsStoreOption(cngplpData *data, cups_dest_t *curr_printer)
 }
 #endif
 
-
 int CreatePPDOptions(cngplpData *data)
 {
 #ifndef _OPAL

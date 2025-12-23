@@ -19,6 +19,7 @@
 
 
 #include <cups/cups.h>
+#include <cups/ppd.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
